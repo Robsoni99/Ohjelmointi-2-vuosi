@@ -1,8 +1,8 @@
-Here is a simple flow chart:
+Käyttäjä luo uuden muistiinpanon:
 
 ```mermaid
 graph TD;
     Käyttäjä-->Serveri;
-    oncivf
+
     Serveri-->Käyttäjä
 ```
