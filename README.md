@@ -1,5 +1,9 @@
-title Käyttäjä luo uuden muistiinpanon
+Here is a simple flow chart:
 
-Käyttäjä->Serveri: muistiinpano lähetetään
-note right of Serveri: Muistiinpanoa käsitellään
-Serveri->Käyttäjä: muistiinpano tulee näkyviin käyttäjälle
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
