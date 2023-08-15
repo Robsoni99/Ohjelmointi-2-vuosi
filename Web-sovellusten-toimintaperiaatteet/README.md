@@ -1,39 +1,21 @@
-Käyttäjä luo uuden muistiinpanon:
-
-```mermaid
-graph TD;
-    Selain-->Serveri;
-    muistiinpano_lähetetään-->Serveri;
-    Serveri-->muistiinpano_näytetään;
-    muistiinpano_näytetään-->Käyttäjä;
-```
-
 ```mermaid
 sequenceDiagram
-    participant browser
-    participant server
+    participant selain
+    participant serveri
     
-    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
-    activate server
-    server-->>browser: HTML document
-    deactivate server
+    selain->>serveri: https://studies.cs.helsinki.fi/exampleapp/notes
+    serveri-->>selain: HTML
     
-    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
-    activate server
-    server-->>browser: the css file
-    deactivate server
+    selain->>serveri: https://studies.cs.helsinki.fi/exampleapp/main.css
+    serveri-->>browser: CSS
     
-    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
-    activate server
-    server-->>browser: the JavaScript file
-    deactivate server
+    selain->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    serveri-->>selain: JS
     
     Note right of browser: The browser starts executing the JavaScript code that fetches the JSON from the server
     
-    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
-    activate server
-    server-->>browser: [{ "content": "HTML is easy", "date": "2023-1-1" }, ... ]
-    deactivate server    
+    selain->>serveri: https://studies.cs.helsinki.fi/exampleapp/data.json
+    serveri-->>selain: Muistiinpanot
 
     Note right of browser: The browser executes the callback function that renders the notes
 
