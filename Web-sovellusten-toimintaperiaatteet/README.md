@@ -3,15 +3,15 @@ sequenceDiagram
     participant selain
     participant serveri
     
-    selain->>serveri: https://studies.cs.helsinki.fi/exampleapp/notes
+    selain->>serveri: pyytää https://studies.cs.helsinki.fi/exampleapp/notes
     serveri-->>selain: HTML
     
-    selain->>serveri: https://studies.cs.helsinki.fi/exampleapp/main.css
+    selain->>serveri: pyytää https://studies.cs.helsinki.fi/exampleapp/main.css
     serveri-->>selain: CSS
     
-    selain->>serveri: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    selain->>serveri: pyytää https://studies.cs.helsinki.fi/exampleapp/main.js
     serveri-->>selain: JS
         
-    selain->>serveri: https://studies.cs.helsinki.fi/exampleapp/data.json
+    selain->>serveri: pyytää https://studies.cs.helsinki.fi/exampleapp/data.json
     serveri-->>selain: Muistiinpanot
 ```
