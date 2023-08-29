@@ -10,6 +10,15 @@ const Statistics = ({ good, neutral, bad }) => {
     padding: 0
   };
 
+  if (total === 0) {
+    return (
+      <div id="statistics">
+        <h2>Statistics</h2>
+        <p style={css}>No feedback given yet</p>
+      </div>
+    );
+  }
+
   return (
     <div id="statistics">
       <h2>Statistics</h2>
